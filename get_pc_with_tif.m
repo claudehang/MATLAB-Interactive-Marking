@@ -1,0 +1,12 @@
+function pc=get_pc_with_tif(Z)
+[H, W] = size(Z);
+Z=double(Z);
+[xx, yy] = meshgrid(1:W,1:H);
+cx=323;
+cy=240;
+fx=597;
+fy=597;
+x3 = (xx - cx) .* Z/ fx;
+y3 = (yy - cy) .* Z / fy;
+z3 = Z;
+pc = cat(3, x3, y3, z3);
